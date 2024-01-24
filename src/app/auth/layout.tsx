@@ -4,6 +4,8 @@ import { TRPCReactProvider } from "@/trpc/react";
 import { Fira_Code } from "next/font/google";
 import React from "react";
 import { Provider } from "../_components/Provider";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
 export const firaCode = Fira_Code({
   weight: ["300", "400", "500", "600", "700"],
@@ -17,7 +19,11 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const layout = async ({ children }: { children: React.ReactNode }) => {
+  const session = await getServerSession();
+  if (!session?.user) {
+    redirect("/");
+  }
   return (
     <html lang="en" className="h-full">
       <body className={`font-sans ${firaCode.variable} h-full`}>
