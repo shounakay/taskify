@@ -36,7 +36,7 @@ export const Nav = ({
                 <Image
                   src={cross}
                   alt="cross"
-                  className=" cursor-pointer"
+                  className="cursor-pointer"
                   width={50}
                   onClick={() => setIsMenuOpen((prev) => !prev)}
                 />
