@@ -18,7 +18,9 @@ If you are not familiar with the different technologies used in this project, pl
 
 Users can register themselves on the application by signing up. Whilst registering, user would have to specify basic details such as name, username and password. After successfull registration, they can sign in to the application with their credentials.
 
-User specifc tasks can be found by navigating to the 'My Tasks' page. Tasks can be added, edited and even deleted from the system from the same page. Users can even filter their tasks by the status of the tasks. By only specifying any details about the task in the search field, tasks can be filtered through.
+User specifc tasks can be found by navigating to the 'My Tasks' page. Tasks can be added, edited and even deleted from the system from the same page.
+
+Users can even filter their tasks by the status of the tasks. By only specifying any details about the task in the search field, tasks can be filtered through.
 
 ## How do I deploy this?
 
