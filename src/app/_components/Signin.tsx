@@ -28,15 +28,12 @@ export const Signin = () => {
   const router = useRouter();
 
   const handleSignin = async (data: TSigninSchema) => {
-    const { status, ok, error, url }: SignInResponse = (await signIn(
-      "credentials",
-      {
-        username: data.username,
-        password: data.password,
-        redirect: false,
-        callbackUrl: "/",
-      },
-    )) as SignInResponse;
+    const { status, ok, url }: SignInResponse = (await signIn("credentials", {
+      username: data.username,
+      password: data.password,
+      redirect: false,
+      callbackUrl: "/",
+    })) as SignInResponse;
     if (!ok && status === 401) {
       setError("password", {
         type: "server",
@@ -93,7 +90,7 @@ export const Signin = () => {
         </button>
       </form>
       <p className="mt-2 text-sm text-neutral-200">
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <Link
           href="/auth/signup"
           className=" text-breaker-bay-600 border-breaker-bay-600 border-b-[1px]"

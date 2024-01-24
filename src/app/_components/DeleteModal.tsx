@@ -1,6 +1,12 @@
 import React from "react";
 
-export const DeleteModal = ({ handleDelete, closeModal }: any) => {
+export const DeleteModal = ({
+  handleDelete,
+  closeModal,
+}: {
+  closeModal: () => void;
+  handleDelete: () => void;
+}) => {
   return (
     <div
       className="relative z-10"

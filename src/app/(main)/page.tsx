@@ -2,10 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import hero from "../../../public/multitask.svg";
 import React from "react";
-import { getServerSession } from "next-auth";
 
-const MainPage = async () => {
-  const session = await getServerSession();
+const MainPage = () => {
   return (
     <section className="flex min-h-full w-full flex-wrap items-center justify-center gap-12 bg-neutral-800 px-8 lg:gap-28">
       <div className="flex basis-[450px] flex-col gap-12">

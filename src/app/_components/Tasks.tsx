@@ -42,28 +42,28 @@ export const Tasks = () => {
     resolver: zodResolver(schema),
   });
 
-  const { data, isFetching, isRefetching, isError, status, refetch } =
+  const { data, isFetching, isRefetching, isError, refetch } =
     api.task.getUserTasks.useQuery({
       searchText,
       filter: selectedFilter === FILTERS[0] ? "" : selectedFilter,
     });
   const addTask = api.task.createTask.useMutation({
-    onSuccess: () => {
+    onSuccess: async () => {
       // Refetch the task data after successfully adding a new task
-      refetch();
+      await refetch();
     },
   });
   const editTask = api.task.updateTask.useMutation({
-    onSuccess: () => {
+    onSuccess: async () => {
       // Refetch the task data after successfully adding a new task
-      refetch();
+      await refetch();
     },
   });
 
   const deleteTask = api.task.deleteTask.useMutation({
-    onSuccess: () => {
+    onSuccess: async () => {
       // Refetch the task data after successfully adding a new task
-      refetch();
+      await refetch();
     },
   });
 
@@ -155,9 +155,10 @@ export const Tasks = () => {
         ) : isError ? (
           <div>Error</div>
         ) : data?.length ? (
-          data?.map((task) => {
+          data?.map((task, i) => {
             return (
               <TaskCard
+                key={i}
                 onDeleteTask={onDeleteSubmit}
                 onEditTask={handleEditTask}
                 {...task}
@@ -170,18 +171,6 @@ export const Tasks = () => {
           <NoTasks />
         )}
       </section>
-      {/* <section>
-        {data?.map((task) => {
-          return (
-            <TaskCard
-              onDeleteTask={onDeleteSubmit}
-              onEditTask={handleEditTask}
-              {...task}
-            />
-          );
-        })}
-      </section> */}
-      {/* </Suspense> */}
       <Modal
         clearFormVals={clearFormVals}
         isModalOpen={isModalOpen}

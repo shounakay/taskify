@@ -84,6 +84,7 @@ export const SelectMenu = ({
                   className="relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900 hover:bg-neutral-300"
                   id="listbox-option-0"
                   role="option"
+                  key={item}
                   onClick={() => {
                     setSelectedItem(item);
                     handleDropdownToggle(false);
