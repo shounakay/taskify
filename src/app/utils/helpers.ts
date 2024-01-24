@@ -33,3 +33,10 @@ export const taskFormSchema = z.object({
 export type TTaskFromSchema = z.infer<typeof taskFormSchema>;
 
 export const FILTERS = ["All", "In Progress", "To Do", "Done"];
+
+export const signUpFormSchema = z.object({
+  username: z.string().min(7, "Username has to be atleast 7 char long"),
+  password: z.string().min(5, "Has to be atleast 5 characters"),
+  confirmPassword: z.string(),
+  name: z.string(),
+});
