@@ -18,6 +18,17 @@ declare module "next-auth" {
     } & DefaultSession["user"];
   }
 
+  // interface User {
+  //   // ...other properties
+  //   // role: UserRole;
+  // }
+}
+
+/**
+ * Options for NextAuth.js used to configure adapters, providers, callbacks, etc.
+ *
+ * @see https://next-auth.js.org/configuration/options
+ */
 export const authOptions: NextAuthOptions = {
   callbacks: {
     session: ({ session, user, token, ...rest }) => {
