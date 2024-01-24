@@ -2,8 +2,9 @@ import { SignUp } from "@/app/_components/SignUp";
 import React from "react";
 
 const page = () => {
+  // ! TODO : Redirect to home when already logged in
   return (
-    <article className=" bg-porcelain-400 flex min-h-full items-center justify-center">
+    <article className="flex min-h-screen w-full items-center justify-center">
       <SignUp />
     </article>
   );

@@ -1,6 +1,9 @@
+import "@/styles/globals.css";
+
 import { TRPCReactProvider } from "@/trpc/react";
 import { Fira_Code } from "next/font/google";
 import React from "react";
+import { Provider } from "../_components/Provider";
 
 export const firaCode = Fira_Code({
   weight: ["300", "400", "500", "600", "700"],
@@ -19,7 +22,11 @@ const layout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en" className="h-full">
       <body className={`font-sans ${firaCode.variable} h-full`}>
         <TRPCReactProvider>
-          <main className=" bg-mortar-500 min-h-full">{children}</main>
+          <Provider>
+            <main className="bg-bg1 min-h-full bg-neutral-700 bg-cover bg-no-repeat">
+              {children}
+            </main>
+          </Provider>
         </TRPCReactProvider>
       </body>
     </html>
