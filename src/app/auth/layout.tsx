@@ -7,7 +7,7 @@ import { Provider } from "../_components/Provider";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
-export const firaCode = Fira_Code({
+const firaCode = Fira_Code({
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-firaCode",
   subsets: ["latin"],
