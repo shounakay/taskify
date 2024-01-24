@@ -4,9 +4,9 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 export default {
   content: [
     "./src/**/*.tsx",
-    "./src/app/(group-name)/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "*",
+    // "./src/app/(group-name)/**/*.{js,ts,jsx,tsx,mdx}",
+    // "./components/**/*.{js,ts,jsx,tsx}",
+    // "*",
   ],
   theme: {
     extend: {
@@ -16,6 +16,9 @@ export default {
       backgroundImage: {
         maingrad:
           "linear-gradient(180deg, #434242, #454444, #4c494a, #565253, #635c5f, #70686e, #7c757e, #87838f, #908f9e, #969aaa, #9aa1b2, #9ba4b5)",
+        bg1: "url('/bg-1.svg')",
+        bg2: "url('/bg-2.svg')",
+        bg3: "url('/bg-3.svg')",
       },
       screens: {
         xss: "360px",
@@ -78,6 +81,20 @@ export default {
           "950": "#1b2c36",
         },
         // 2
+        "curious-blue": {
+          "50": "#eff9ff",
+          "100": "#dff2ff",
+          "200": "#b7e7ff",
+          "300": "#77d6ff",
+          "400": "#2fc2ff",
+          "500": "#039cdf",
+          "600": "#0088d1",
+          "700": "#006ca9",
+          "800": "#015c8b",
+          "900": "#074c73",
+          "950": "#05304c",
+        },
+
         "quarter-spanish-white": {
           "50": "#faf7f0",
           "100": "#f4eee0",
