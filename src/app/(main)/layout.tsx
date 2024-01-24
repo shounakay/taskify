@@ -4,6 +4,9 @@ import { Fira_Code } from "next/font/google";
 
 import { TRPCReactProvider } from "@/trpc/react";
 import { Nav } from "../_components/Nav";
+import { Provider } from "../_components/Provider";
+import { getServerSession } from "next-auth";
+import { Footer } from "../_components/Footer";
 
 export const firaCode = Fira_Code({
   weight: ["300", "400", "500", "600", "700"],
@@ -17,19 +20,24 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await getServerSession();
+  console.log("sess in layout", session);
   return (
     <html lang="en" className="h-full">
       <body className={`font-sans ${firaCode.variable} h-full`}>
         <TRPCReactProvider>
-          <main className=" bg-mortar-500 min-h-full">
-            <Nav />
-            {children}
-          </main>
+          <Provider>
+            <main className="h-full bg-neutral-800">
+              <Nav session={session} />
+              {children}
+              <Footer />
+            </main>
+          </Provider>
         </TRPCReactProvider>
       </body>
     </html>

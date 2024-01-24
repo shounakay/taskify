@@ -11,19 +11,19 @@ export const NavItems = () => {
         Home
       </Link>
       <Link
-        href="/"
+        href="/tasks"
         className="border-masala-300 max-w-fit cursor-pointer border-b-4 text-2xl font-semibold text-neutral-200"
       >
         My Tasks
       </Link>
       <Link
-        href="/"
+        href="/auth/signin"
         className="border-masala-300 max-w-fit cursor-pointer border-b-4 text-2xl font-semibold text-neutral-200"
       >
         SignIn
       </Link>
       <Link
-        href="/"
+        href="/auth/signup"
         className="border-masala-300 max-w-fit cursor-pointer border-b-4 text-2xl font-semibold text-neutral-200"
       >
         SignUp
