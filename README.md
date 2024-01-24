@@ -22,6 +22,6 @@ User specifc tasks can be found by navigating to the 'My Tasks' page. Tasks can 
 
 Users can even filter their tasks by the status of the tasks. By only specifying any details about the task in the search field, tasks can be filtered through.
 
-## How do I deploy this?
+## Where is this deployed ?
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+Taskify is deployed [here](https://taskify-three-alpha.vercel.app/).
