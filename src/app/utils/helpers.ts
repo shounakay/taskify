@@ -18,3 +18,18 @@ export const schema = z.object({
 });
 
 export type TScheme = z.infer<typeof schema>;
+
+export const STATUSES = ["To Do", "In Progress", "Done"];
+
+export const taskFormSchema = z.object({
+  title: z.string().max(70, "Title can be only 70 characters long"),
+  description: z
+    .string()
+    .max(200, "Description can be only 200 characters long")
+    .min(5, "Provide a detailed description"),
+  //   status: z.enum(["In Progress, To Do", "Done"]),
+});
+
+export type TTaskFromSchema = z.infer<typeof taskFormSchema>;
+
+export const FILTERS = ["All", "In Progress", "To Do", "Done"];
