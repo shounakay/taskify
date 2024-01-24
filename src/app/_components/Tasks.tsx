@@ -85,13 +85,10 @@ export const Tasks = () => {
   const handleCreateTask = (val: AddTaskForm) => {
     if (isEdit) {
       const task = editTask.mutate({ ...val, taskId: editTaskId });
-      console.log("edit task client", task);
       setIsEdit(false);
     } else {
       const task = addTask.mutate(val);
-      console.log("created task client", task);
     }
-    // refetch();
     setIsModalOpen(false);
     reset();
   };

@@ -40,26 +40,16 @@ declare module "next-auth" {
 export const authOptions: NextAuthOptions = {
   callbacks: {
     session: ({ session, user, token, ...rest }) => {
-      console.log("session callback", { session, user, token, rest });
       return {
         ...session,
         user: {
           ...session.user,
           username: token.name,
           sub: token.sub,
-          // userId:
         },
       };
     },
     jwt: ({ token, user, account, profile, isNewUser, session }) => {
-      console.log("jwt vals", {
-        token,
-        user,
-        account,
-        profile,
-        isNewUser,
-        session,
-      });
       return {
         ...token,
         username: token?.username ?? user?.name,
@@ -68,13 +58,6 @@ export const authOptions: NextAuthOptions = {
       };
     },
     signIn: ({ user, profile, account, email, credentials }) => {
-      console.log("signin callbck", {
-        user,
-        profile,
-        account,
-        email,
-        credentials,
-      });
       return !user ? false : true;
     },
   },
@@ -95,7 +78,6 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", placeholder: "" },
       },
       async authorize(credentials, req) {
-        console.log("cred auth", credentials, req);
         try {
           const { username, password } = credentials ?? {};
           if (!username || !password) {
@@ -106,13 +88,12 @@ export const authOptions: NextAuthOptions = {
             password as string,
             user?.password as string,
           );
-          console.log("isPasswordMatch", isPasswordMatch);
           if (user && isPasswordMatch) {
             return user;
           }
           return null;
         } catch (err) {
-          console.error("heya", err);
+          console.error(err);
           return null;
         }
       },

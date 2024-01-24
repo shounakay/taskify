@@ -4,10 +4,11 @@ import React from "react";
 import { MdCopyright } from "react-icons/md";
 import taskifyLogo from "../../../public/taskify-nobg.svg";
 
-export const Footer = () => {
+export const Footer = ({ children }: { children?: React.ReactNode }) => {
   return (
     <>
       {/* <div className="w-full border-[1px] border-neutral-400" /> */}
+      {children}
       <footer className="flex w-full flex-col justify-between bg-neutral-900 px-5 py-5 lg:px-24">
         <div className="flex w-full items-center justify-between">
           <div className="flex basis-[35%] items-center gap-3">

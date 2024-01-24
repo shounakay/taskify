@@ -31,7 +31,6 @@ export const Signin = () => {
     const { status, ok, error, url }: SignInResponse = (await signIn(
       "credentials",
       {
-        //   callbackUrl: "/",
         username: data.username,
         password: data.password,
         redirect: false,
@@ -39,7 +38,6 @@ export const Signin = () => {
       },
     )) as SignInResponse;
     if (!ok && status === 401) {
-      console.error("error on signin", error);
       setError("password", {
         type: "server",
         message: "Username or password is wrong",
@@ -49,8 +47,6 @@ export const Signin = () => {
       reset();
     }
   };
-
-  console.log("err", errors);
 
   return (
     <section className=" bg-santas-gray-950 flex min-w-[300px] flex-col rounded-md px-16 py-12">

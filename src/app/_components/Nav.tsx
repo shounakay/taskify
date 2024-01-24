@@ -1,21 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
-import hamburger from "../../../public/hamburger.png";
+import hamburger from "../../../public/hamburger-menu.png";
 import cross from "../../../public/cross.png";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { NavItems } from "./NavItems";
 import Link from "next/link";
-import { signOut, useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import { Session } from "next-auth";
 import taskifyLogo from "../../../public/taskify-nobg.svg";
 
-export const Nav = ({ session }: { session: Session | null }) => {
+export const Nav = ({
+  session,
+  children,
+}: {
+  session: Session | null;
+  children?: React.ReactNode;
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  //   const { data, status } = useSession();
-  //   console.log("hey in nav", data);
-  const pathname: string = usePathname();
   return (
     <>
       <header className="bg-neutral-800">
@@ -35,6 +37,7 @@ export const Nav = ({ session }: { session: Session | null }) => {
                   src={cross}
                   alt="cross"
                   className=" cursor-pointer"
+                  width={50}
                   onClick={() => setIsMenuOpen((prev) => !prev)}
                 />
               ) : (
@@ -87,10 +90,12 @@ hover:bg-neutral-400"
         <div className="border-[0.5px] border-neutral-400 px-6" />
       </header>
       {isMenuOpen ? (
-        <section className=" bg-masala-900 z-10 w-full px-8 py-14">
+        <section className=" z-10 min-h-full bg-neutral-800 px-8 py-14">
           <NavItems />
         </section>
-      ) : null}
+      ) : (
+        <>{children}</>
+      )}
     </>
   );
 };

@@ -33,7 +33,6 @@ export const SignUp = () => {
   });
 
   const handleRegisterUser = async (data: TSignUpFormSchema) => {
-    console.log("data", data);
     const res = await fetch("/api/auth/register-user", {
       method: "POST",
       headers: {
@@ -41,11 +40,10 @@ export const SignUp = () => {
       },
       body: JSON.stringify(data),
     });
-    console.log("res", res);
     if (res.ok) {
       router.push("/auth/signin");
     } else {
-      console.error("hey error happened");
+      console.error(res.status);
     }
     reset();
   };

@@ -26,16 +26,15 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const session = await getServerSession();
-  console.log("sess in layout", session);
   return (
     <html lang="en" className="h-full">
       <body className={`font-sans ${firaCode.variable} h-full`}>
         <TRPCReactProvider>
           <Provider>
             <main className="h-full bg-neutral-800">
-              <Nav session={session} />
-              {children}
-              <Footer />
+              <Nav session={session}>
+                <Footer>{children}</Footer>
+              </Nav>
             </main>
           </Provider>
         </TRPCReactProvider>
