@@ -105,8 +105,6 @@ export const SelectMenu = ({
                 </li>
               );
             })}
-
-            {/* <!-- More items... --> */}
           </ul>
         ) : null}
       </div>

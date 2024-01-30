@@ -5,7 +5,6 @@ export const TaskCard = ({
   title,
   description,
   status,
-  dueDate,
   id,
   onDeleteTask,
   onEditTask,
@@ -41,7 +40,7 @@ export const TaskCard = ({
             onClick={() =>
               onEditTask(id, { title, status, description } as AddTaskForm)
             }
-            className="  text-breaker-bay-500 border-breaker-bay-500 bg-breaker-bay-200 rounded-md border-[1px] px-2 py-1"
+            className="  rounded-md border-[1px] border-breaker-bay-500 bg-breaker-bay-200 px-2 py-1 text-breaker-bay-500"
           >
             Edit
           </button>

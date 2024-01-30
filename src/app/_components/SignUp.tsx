@@ -27,7 +27,7 @@ export const SignUp = () => {
     register,
     reset,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<TSignUpFormSchema>({
     resolver: zodResolver(signUpFormSchema),
   });
@@ -49,7 +49,7 @@ export const SignUp = () => {
   };
 
   return (
-    <section className=" bg-santas-gray-950 flex min-w-[300px] flex-col rounded-md px-16 py-12">
+    <section className=" flex min-w-[300px] flex-col rounded-md bg-santas-gray-950 px-16 py-12">
       <p className="self-center text-xl font-semibold uppercase text-neutral-200">
         Register
       </p>
@@ -63,7 +63,7 @@ export const SignUp = () => {
             type="text"
             placeholder="FullName"
             {...register("name")}
-            className="bg-santas-gray-900 w-72 min-w-0 rounded-md px-2 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
+            className="w-72 min-w-0 rounded-md bg-santas-gray-900 px-2 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
           />
           {errors.username ? (
             <span className=" text-xs text-red-400">
@@ -77,7 +77,7 @@ export const SignUp = () => {
             type="text"
             placeholder="Username"
             {...register("username")}
-            className="bg-santas-gray-900 rounded-md px-2 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
+            className="rounded-md bg-santas-gray-900 px-2 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
           />
           {errors.username ? (
             <span className=" text-xs text-red-400">
@@ -91,7 +91,7 @@ export const SignUp = () => {
             type="password"
             {...register("password")}
             placeholder="Password"
-            className="bg-santas-gray-900 rounded-md px-2 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
+            className="rounded-md bg-santas-gray-900 px-2 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
           />
           {errors.password ? (
             <span className=" text-xs text-red-400">
@@ -105,7 +105,7 @@ export const SignUp = () => {
             type="password"
             placeholder="Confirm Password"
             {...register("confirmPassword")}
-            className="bg-santas-gray-900 rounded-md px-2 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
+            className="rounded-md bg-santas-gray-900 px-2 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
           />
           {errors.confirmPassword ? (
             <span className=" text-xs text-red-400">
@@ -124,7 +124,7 @@ export const SignUp = () => {
         Have an account?{" "}
         <Link
           href="/auth/signin"
-          className=" text-breaker-bay-600 border-breaker-bay-600 border-b-[1px]"
+          className=" border-b-[1px] border-breaker-bay-600 text-breaker-bay-600"
         >
           Signin
         </Link>

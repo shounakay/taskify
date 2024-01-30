@@ -1,9 +1,8 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import React, { SetStateAction, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { SelectMenu } from "./SelectMenu";
 import {
   AddTaskForm,
@@ -97,7 +96,6 @@ export const TaskForm = ({
           ) : null}
         </div>
         <div className="mb-8 flex flex-col gap-2">
-          {/* <label className="text-neutral-500">Status</label> */}
           <SelectMenu
             isDropMenuOpen={isDropMenuOpen}
             list={STATUSES as string[]}
@@ -109,8 +107,7 @@ export const TaskForm = ({
         <div className=" px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
           <button
             type="submit"
-            // onClick={() => handleCreateTask()}
-            className="bg-breaker-bay-600 hover:bg-breaker-bay-500 inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm sm:ml-3 sm:w-auto"
+            className="inline-flex w-full justify-center rounded-md bg-breaker-bay-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-breaker-bay-500 sm:ml-3 sm:w-auto"
           >
             Add
           </button>

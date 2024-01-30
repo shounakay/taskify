@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useState } from "react";
+import React, { useState } from "react";
 import { Modal } from "./Modal";
 import { api } from "@/trpc/react";
 import { TaskCard } from "./TaskCard";
@@ -56,14 +56,14 @@ export const Tasks = () => {
   });
   const editTask = api.task.updateTask.useMutation({
     onSuccess: async () => {
-      // Refetch the task data after successfully adding a new task
+      // Refetch the task data after successfully editing a new task
       await refetch();
     },
   });
 
   const deleteTask = api.task.deleteTask.useMutation({
     onSuccess: async () => {
-      // Refetch the task data after successfully adding a new task
+      // Refetch the task data after successfully deleting a new task
       await refetch();
     },
   });
@@ -133,10 +133,8 @@ export const Tasks = () => {
               setSelectedItem={setSelectedFilter}
             />
           </div>
-          {/* <SelectMenu /> */}
         </div>
       </section>
-      {/* <Suspense fallback={<div>Loading...</div>}> */}
       <section>
         {isFetching || isRefetching ? (
           <LoadingTasks />
