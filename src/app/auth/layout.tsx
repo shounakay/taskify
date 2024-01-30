@@ -21,7 +21,7 @@ export const metadata = {
 
 const layout = async ({ children }: { children: React.ReactNode }) => {
   const session = await getServerSession();
-  if (!session?.user) {
+  if (session?.user) {
     redirect("/");
   }
   return (
@@ -29,7 +29,7 @@ const layout = async ({ children }: { children: React.ReactNode }) => {
       <body className={`font-sans ${firaCode.variable} h-full`}>
         <TRPCReactProvider>
           <Provider>
-            <main className="bg-bg1 min-h-full bg-neutral-700 bg-cover bg-no-repeat">
+            <main className="min-h-full bg-neutral-700 bg-bg1 bg-cover bg-no-repeat">
               {children}
             </main>
           </Provider>
