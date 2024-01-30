@@ -4,7 +4,6 @@ import { redirect } from "next/navigation";
 import React from "react";
 
 const page = async () => {
-  //   const tasks = await api.task.getUserTasks.query();
   const session = await getServerSession();
   if (!session?.user) {
     redirect("/auth/signin");
