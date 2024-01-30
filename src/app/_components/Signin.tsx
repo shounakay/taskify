@@ -46,7 +46,7 @@ export const Signin = () => {
   };
 
   return (
-    <section className=" bg-santas-gray-950 flex min-w-[300px] flex-col rounded-md px-16 py-12">
+    <section className=" flex min-w-[300px] flex-col rounded-md bg-santas-gray-950 px-16 py-12">
       <p className="self-center text-xl font-semibold uppercase text-neutral-200">
         Login With Credentials
       </p>
@@ -60,7 +60,7 @@ export const Signin = () => {
             type="text"
             placeholder="username"
             {...register("username")}
-            className={`bg-santas-gray-900 w-72 min-w-0 rounded-md px-2 py-2 text-sm focus-visible:outline-none ${errors.password?.type === "server" || errors.username ? "ring-1 ring-red-500" : ""}`}
+            className={`w-72 min-w-0 rounded-md bg-santas-gray-900 px-2 py-2 text-sm focus-visible:outline-none ${errors.password?.type === "server" || errors.username ? "ring-1 ring-red-500" : ""}`}
           />
           {errors.username ? (
             <span className=" text-xs text-red-400">
@@ -74,7 +74,7 @@ export const Signin = () => {
             type="password"
             placeholder="password"
             {...register("password")}
-            className={`bg-santas-gray-900 w-72 min-w-0 rounded-md px-2 py-2 text-sm focus-visible:outline-none  ${errors.password?.type === "server" || errors.password ? "ring-1 ring-red-500" : ""}`}
+            className={`w-72 min-w-0 rounded-md bg-santas-gray-900 px-2 py-2 text-sm focus-visible:outline-none  ${errors.password?.type === "server" || errors.password ? "ring-1 ring-red-500" : ""}`}
           />
           {errors.password ? (
             <span className=" text-xs text-red-400">
@@ -93,7 +93,7 @@ export const Signin = () => {
         Don&apos;t have an account?{" "}
         <Link
           href="/auth/signup"
-          className=" text-breaker-bay-600 border-breaker-bay-600 border-b-[1px]"
+          className=" border-b-[1px] border-breaker-bay-600 text-breaker-bay-600"
         >
           SignUp
         </Link>

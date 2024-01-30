@@ -49,7 +49,7 @@ export const SignUp = () => {
   };
 
   return (
-    <section className=" flex min-w-[300px] flex-col rounded-md bg-santas-gray-950 px-16 py-12">
+    <section className="flex min-w-[300px] flex-col rounded-md bg-santas-gray-950 px-16 py-12">
       <p className="self-center text-xl font-semibold uppercase text-neutral-200">
         Register
       </p>
