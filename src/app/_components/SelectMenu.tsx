@@ -1,5 +1,4 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { STATUS_ENUM } from "../utils/helpers";
 
 export const SelectMenu = ({
   label = "Status",
@@ -34,11 +33,6 @@ export const SelectMenu = ({
           aria-labelledby="listbox-label"
         >
           <span className="flex items-center">
-            {/* <img
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              alt=""
-              className="h-5 w-5 flex-shrink-0 rounded-full"
-            /> */}
             <span className="ml-3 block truncate">
               {selectedItem ?? list[0]}
             </span>
@@ -58,15 +52,6 @@ export const SelectMenu = ({
             </svg>
           </span>
         </button>
-        {/* 
-      Select popover, show/hide based on select state.
-
-      Entering: ""
-        From: ""
-        To: ""
-      Leaving: "transition ease-in duration-100"
-        From: "opacity-100"
-        To: "opacity-0" */}
         {isDropMenuOpen ? (
           <ul
             className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
@@ -75,9 +60,6 @@ export const SelectMenu = ({
             aria-labelledby="listbox-label"
             aria-activedescendant="listbox-option-3"
           >
-            {/* Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
-
-        Highlighted: "bg-indigo-600 text-white", Not Highlighted: "text-gray-900" */}
             {list.map((item) => {
               return (
                 <li

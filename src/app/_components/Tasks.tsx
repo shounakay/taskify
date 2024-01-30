@@ -18,6 +18,7 @@ import LoadingTasks from "./LoadingTasks";
 import { NoTasks } from "./NoTasks";
 import { NotFound } from "./NotFound";
 import { SelectMenu } from "./SelectMenu";
+import { SearchInput } from "./SearchInput";
 
 export const Tasks = () => {
   const [searchText, setSearchText] = useState("");
@@ -109,29 +110,16 @@ export const Tasks = () => {
   return (
     <section className="flex w-full flex-col gap-8">
       <section className="flex w-full flex-wrap items-center justify-between">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex items-center gap-3"
-        >
-          <input
-            type="search"
-            {...register("search")}
-            size={25}
-            className="rounded-md bg-neutral-200 px-1 py-2"
-            placeholder="Search tasks"
-          />
-          <button
-            type="submit"
-            className="bg-quarter-spanish-white-600 hover:bg-quarter-spanish-white-400 rounded-md px-2 py-2 text-neutral-200"
-          >
-            Submit
-          </button>
-        </form>
+        <SearchInput
+          handleSubmit={handleSubmit}
+          onSubmit={onSubmit}
+          register={register}
+        />
         <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={() => setIsModalOpen((prev) => !prev)}
-            className="bg-breaker-bay-600 hover:bg-breaker-bay-400 rounded-md px-2 py-2 text-neutral-200"
+            className="rounded-md bg-breaker-bay-600 px-2 py-2 text-neutral-200 hover:bg-breaker-bay-400"
           >
             + Add Task
           </button>
